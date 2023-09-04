@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock js</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body  onLoad='startTime()'>
+    <div id="dynamictime"></div>
+    <script>
+    function startTime() {
+        let today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+document.getElementById('dynamictime').innerHTML = h + " | " + m + " | " + s ;
+        let t = setTimeout(function() {
+            startTime()
+        }, 0);
+    }
+    function check(i) {
+        if (i < 10) {
+            i = "0" + i
+        };
+    }
+</script>
+</body>
+</html>
